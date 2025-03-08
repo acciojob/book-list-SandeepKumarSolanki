@@ -3,7 +3,8 @@ let form = document.querySelector('form');
 let title = document.getElementById('title');
 let author = document.getElementById('author');
 let isbn = document.getElementById('isbn');
-let table = document.querySelector('.table');  // Correctly select the table
+let table = document.querySelector('.table');  
+let book = document.getElementById('book-list')
 let deleteBtn = document.getElementById('deleteRow');
 
 // Listen for form submission
@@ -11,7 +12,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevent default form submission
 
   // Create a new row in the table
-  let newRow = table.insertRow();
+  let newRow = book.insertRow();
   
   // Create and insert cells into the new row
   let cell1 = newRow.insertCell();
