@@ -4,8 +4,7 @@ let title = document.getElementById('title');
 let author = document.getElementById('author');
 let isbn = document.getElementById('isbn');
 let table = document.querySelector('.table');  
-let book = document.getElementById('book-list')
-let deleteBtn = document.getElementById('deleteRow');
+let book = document.getElementById('book-list');
 
 // Listen for form submission
 form.addEventListener("submit", (e) => {
@@ -28,11 +27,15 @@ form.addEventListener("submit", (e) => {
   let deleteCell = newRow.insertCell();
   let deleteButton = document.createElement("button");
   deleteButton.innerText = "Delete";
+  
+  // Add the 'delete' class to the delete button for the test to find it
+  deleteButton.classList.add('delete'); 
+
   deleteCell.appendChild(deleteButton);
 
   // Attach a click event listener to delete the row
-  deleteButton.addEventListener("click", (e) => {
-    e.target.newRow.remove();  // Removes the row
+  deleteButton.addEventListener("click", () => {
+    newRow.remove();  // Removes the row
   });
 
   // Clear the form fields after submission
