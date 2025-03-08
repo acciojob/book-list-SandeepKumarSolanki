@@ -16,9 +16,20 @@ form.addEventListener("submit" , ()=>{
 	let cell3 = newRow.insertCell();
 	cell1.innerText = `${isbn.value}`
 
-	deleteBtn.addEventListener("click" , ()=>{
-		let row = document.
-		row.removeItem();
-	})
+	// Create and insert a delete button in the row
+	let deleteCell = newRow.insertCell();
+	let deleteButton = document.createElement("button");
+	deleteButton.innerText = "Delete";
+	deleteCell.appendChild(deleteButton);
+	
+	// Attach a click event listener to delete the row
+	deleteButton.addEventListener("click", () => {
+	newRow.remove();  // Removes the row
+	});
+	
+	// Clear the form fields after submission
+	title.value = '';
+	author.value = '';
+	isbn.value = '';
 	
 })
