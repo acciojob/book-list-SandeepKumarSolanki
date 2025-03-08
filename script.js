@@ -31,8 +31,8 @@ form.addEventListener("submit", (e) => {
   deleteCell.appendChild(deleteButton);
 
   // Attach a click event listener to delete the row
-  deleteButton.addEventListener("click", () => {
-    newRow.remove();  // Removes the row
+  deleteButton.addEventListener("click", (e) => {
+    e.target.newRow.remove();  // Removes the row
   });
 
   // Clear the form fields after submission
